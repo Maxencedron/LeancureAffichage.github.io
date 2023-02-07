@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Affichage_LeanCure_Lignes_Pates_Farcies</title>
+  </head>
+  <body>
+    <iframe id="iframe1" src="http://ligne4-4ravioli.pouleancure.cofigeo.lan/player.php?a=&screen=defaultscreen&display=disp_broadcast&actor=produnit1"
+    width="100%" height="1000"></iframe>
+    <iframe id="iframe2" src="http://ligne1-2ravioli.pouleancure.cofigeo.lan/player.php?a=&screen=defaultscreen&display=disp_broadcast&actor=produnit1" style="display:none;"
+    width="100%" height="1000" style="display:none;"></iframe>
+    <iframe id="iframe3" src="http://lignetube.pouleancure.cofigeo.lan/player.php?a=&screen=defaultscreen&display=disp_broadcast&actor=produnit1" style="display:none;"
+    width="100%" height="1000" style="display:none;"></iframe>
+
+    <script>
+      var iframes = [document.getElementById("iframe1"), document.getElementById("iframe2"), document.getElementById("iframe3")];
+      var index = 0;
+      
+      setInterval(function() {
+        iframes[index].style.display = "none";
+        index = (index + 1) % 3;
+        iframes[index].style.display = "block";
+      }, 12000);
+    </script>
+  </body>
+</html>
